@@ -18,7 +18,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp.router(
       routerDelegate: AutoRouterDelegate(
         _appRouter,
-        navigatorObservers: () => [defaultLifecycleObserver],
+        navigatorObservers: () => [LifecycleObserver()],
       ),
       routeInformationParser: _appRouter.defaultRouteParser(),
     );
