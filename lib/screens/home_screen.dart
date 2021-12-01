@@ -20,17 +20,17 @@ class _HomeScreenState extends State<HomeScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          OutlinedButton(
-            onPressed: () {
-              AutoRouter.of(context).push(DetailScreenRoute(
+      body: Center(
+        child: OutlinedButton(
+          onPressed: () {
+            AutoRouter.of(context).push(DetailRouter(children: [
+              DetailScreenRoute(
                 randomNumber: _random.nextInt(100),
-              ));
-            },
-            child: const Text("Next page"),
-          ),
-        ],
+              ),
+            ]));
+          },
+          child: const Text("Next page"),
+        ),
       ),
     );
   }
